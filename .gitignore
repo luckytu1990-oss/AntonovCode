@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+*.pt
+!weights/
+weights/*
+!weights/yolov8n-human-crowdhuman.pt
+third_party/*/.git/
+third_party/*/weights/
+events/
+data/*.mp4
+configs/config.yaml
+.~lock.*
+*.backup.docx

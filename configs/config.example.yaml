@@ -1,0 +1,45 @@
+source: data/ped.mp4
+model: yolov8n.pt
+model_backend: ultralytics
+
+detection:
+  confidence: 0.45
+  image_size: 640
+  device: null
+  nms_iou: 0.7
+
+tracker:
+  max_age: 30
+  min_hits: 3
+  iou_threshold: 0.3
+
+yolo_human:
+  repo_path: third_party/YOLOv8-human
+
+zone:
+  # Координаты точек запрещенной зоны в пикселях кадра: [x, y]
+  polygon:
+    - [220, 120]
+    - [560, 120]
+    - [620, 420]
+    - [180, 420]
+
+alerts:
+  cooldown_seconds: 30
+  draw_preview: true
+
+output:
+  photos_dir: events/photos
+  videos_dir: events/videos
+  save_video: false
+  video_fps: null
+  video_codec: mp4v
+
+telegram:
+  enabled: false
+  bot_token: "PUT_TELEGRAM_BOT_TOKEN_HERE"
+  chat_id: "PUT_CHAT_ID_HERE"
+
+runtime:
+  show_window: true
+  window_name: "Access Control"

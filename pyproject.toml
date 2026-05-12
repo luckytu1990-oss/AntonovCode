@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "access-control-yolo"
+version = "0.1.0"
+description = "YOLO-based access control system for protected zones"
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.2.0",
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "PyYAML>=6.0.0",
+    "requests>=2.31.0",
+    "lap>=0.5.12",
+    "filterpy>=1.4.5",
+]
+
+[project.scripts]
+access-control = "access_control.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
