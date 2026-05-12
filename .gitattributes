@@ -1,1 +1,2 @@
 weights/*.pt filter=lfs diff=lfs merge=lfs -text
+weights/yolov8n-human-crowdhuman.pt filter=lfs diff=lfs merge=lfs -text
