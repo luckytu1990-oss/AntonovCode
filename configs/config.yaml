@@ -1,0 +1,44 @@
+source: data/data_2.mp4
+model: weights/yolov8n-human-crowdhuman.pt
+model_backend: yolo_human
+
+detection:
+  confidence: 0.45
+  image_size: 640
+  device: cpu
+  nms_iou: 0.7
+
+tracker:
+  max_age: 30
+  min_hits: 3
+  iou_threshold: 0.3
+
+yolo_human:
+  repo_path: third_party/YOLOv8-human
+
+zone:
+  polygon:
+    - [0, 1380]
+    - [1080, 1320]
+    - [1080, 1885]
+    - [0, 1885]
+
+alerts:
+  cooldown_seconds: 30
+  draw_preview: true
+
+output:
+  photos_dir: events/photos
+  videos_dir: events/videos
+  save_video: true
+  video_fps: null
+  video_codec: mp4v
+
+telegram:
+  enabled: true
+  bot_token: "8722504324:AAENTp6P91zB7oY7UUnmhmgXTBOtcksVj84"
+  chat_id: "151249540"
+
+runtime:
+  show_window: false
+  window_name: "Access Control"
